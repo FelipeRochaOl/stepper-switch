@@ -9,11 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var stapper: UIStepper!
+    @IBOutlet weak var switchComponent: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func tappedStapper(_ sender: UIStepper) {
+        self.resultLabel.text = String(stapper.value)
     }
 
-
+    @IBAction func tappedSwitch(_ sender: UISwitch) {
+        self.stapper.isEnabled = switchComponent.isOn
+    }
+    
 }
 
